@@ -1,81 +1,96 @@
-import { Food } from "./app/shared/models/Food";
-import { Tag } from "./app/shared/models/Tag";
+export const sample_foods: any[] = [
+  {
+    id: '1',
+    name: 'Pizza Pepperoni',
+    cookTime: '10-20',
+    price: 10,
+    favorite: false,
+    origins: ['italy'],
+    stars: 4.5,
+    imageUrl: 'assets/food-1.jpg',
+    tags: ['FastFood', 'Pizza', 'Lunch'],
+  },
+  {
+    id: '2',
+    name: 'Meatball',
+    price: 20,
+    cookTime: '20-30',
+    favorite: true,
+    origins: ['persia', 'middle east', 'china'],
+    stars: 4.7,
+    imageUrl: 'assets/food-2.jpg',
+    tags: ['SlowFood', 'Lunch'],
+  },
+  {
+    id: '3',
+    name: 'Hamburger',
+    price: 5,
+    cookTime: '10-15',
+    favorite: false,
+    origins: ['germany', 'us'],
+    stars: 3.5,
+    imageUrl: 'assets/food-3.jpg',
+    tags: ['FastFood', 'Hamburger'],
+  },
+  {
+    id: '4',
+    name: 'Fried Potatoes',
+    price: 2,
+    cookTime: '15-20',
+    favorite: true,
+    origins: ['belgium', 'france'],
+    stars: 3.3,
+    imageUrl: 'assets/food-4.jpg',
+    tags: ['FastFood', 'Fry'],
+  },
+  {
+    id: '5',
+    name: 'Chicken Soup',
+    price: 11,
+    cookTime: '40-50',
+    favorite: false,
+    origins: ['india', 'asia'],
+    stars: 3.0,
+    imageUrl: 'assets/food-5.jpg',
+    tags: ['SlowFood', 'Soup'],
+  },
+  {
+    id: '6',
+    name: 'Vegetables Pizza',
+    price: 9,
+    cookTime: '40-50',
+    favorite: false,
+    origins: ['italy'],
+    stars: 4.0,
+    imageUrl: 'assets/food-6.jpg',
+    tags: ['FastFood', 'Pizza', 'Lunch'],
+  },
+];
 
-export const sample_foods: Food[] = [
-    {
-      id: "1",
-      name: "Pizza",
-      price: 12.99,
-      tags: ["Italian", "Fast Food"],
-      favorite: true,
-      stars: 4,
-      imageUrl: "assets/food-1.jpg",
-      origins: ["Italy"],
-      cookTime: "30-40"
-    },
-    {
-      id: "2",
-      name: "Sushi",
-      price: 18.50,
-      tags: ["Japanese", "Seafood"],
-      favorite: false,
-      stars: 5,
-      imageUrl: "assets/food-2.jpg",
-      origins: ["Japan", "Diwata Pares"],
-      cookTime: "45-50"
-    },
-    {
-      id: "3",
-      name: "Burger",
-      price: 9.99,
-      favorite: true,
-      stars: 4,
-      imageUrl: "assets/food-3.jpg",
-      origins: ["United States"],
-      cookTime: "20-40"
-    },
-    {
-      id: "4",
-      name: "Fries",
-      price: 14.99,
-      tags: ["Thai", "Noodles", "Fast Food"],
-      favorite: false,
-      stars: 4,
-      imageUrl: "assets/food-4.jpg",
-      origins: ["Thailand"],
-      cookTime: "35-40"
-    },
-    {
-      id: "5",
-      name: "Chicken Soup",
-      price: 10.50,
-      tags: ["Mexican"],
-      favorite: true,
-      stars: 4,
-      imageUrl: "assets/food-5.jpg",
-      origins: ["Mexico"],
-      cookTime: "25-40"
-    },
-    {
-      id: "6",
-      name: "Vegetables Pizza",
-      price: 15.99,
-      tags: ["Japanese", "Seafood", "Vegetarian"],
-      favorite: true,
-      stars: 5,
-      imageUrl: "assets/food-6.jpg",
-      origins: ["Japan"],
-      cookTime: "40-45"
-    }
-  ];
+export const sample_tags: any[] = [
+  { name: 'All', count: 6 },
+  { name: 'FastFood', count: 4 },
+  { name: 'Pizza', count: 2 },
+  { name: 'Lunch', count: 3 },
+  { name: 'SlowFood', count: 2 },
+  { name: 'Hamburger', count: 1 },
+  { name: 'Fry', count: 1 },
+  { name: 'Soup', count: 1 },
+];
 
-export const sample_tags:Tag[] = [
-  { name: "Italian", count: 25 },
-  { name: "Japanese", count: 18 },
-  { name: "Fast Food", count: 30 },
-  { name: "Mexican", count: 15 },
-  { name: "Lunch", count: 12 },
-  { name: "Thai", count: 10 },
-  { name: "Bakery", count: 20 },
-  { name: "Vegetarian", count: 8 }
-]
+export const sample_users: any[] = [
+  {
+    name: 'John Doe',
+    email: 'john@gmail.com',
+    password: '12345',
+    address: 'Toronto On',
+    isAdmin: true,
+  },
+  {
+    name: 'Jane Doe',
+    email: 'Jane@gmail.com',
+    password: '12345',
+    address: 'Shanghai',
+    isAdmin: false,
+  },
+];

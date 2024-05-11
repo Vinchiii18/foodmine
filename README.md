@@ -110,3 +110,41 @@
         4. Add Local Storage methods
         5. Add Logout Method
             1. Add to Header
+
+13. Make Components For Login Page
+    1. Input Container
+    2. Input Validation
+    3. Text Input
+    4. Default Button
+
+14. Connect Login API To MongoDB Atlas
+    1. Moving APIs into routers
+    2. Create MongoDB Atlas
+    3. Create .env file
+    4. Install
+        1. mongoose
+        2. dotenv
+        3. bcryptjs
+        4. express-async-handler
+    5. Connect to MongoDB Atlas
+    6. Use MongoDB instead of data.ts in APIs
+
+15. Register User
+    1. Add Register API
+    2. Add Register service method
+    3. Add Register link
+    4. Add Register Component
+
+16. Loading!
+    1. Add Image
+    2. Add Service
+    3. Add Component
+    4. Add Interceptor
+
+17. Checout Page
+    1. Create Order Model
+    2. Create Checkout Model
+        1. Add To Router
+    3. Add User to User Service
+    4. Add Cart to Cart Service
+    5. Create Order Items List Component
