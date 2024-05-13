@@ -1,14 +1,11 @@
-import {connect, ConnectOptions } from 'mongoose';
+import {connect, ConnectOptions} from 'mongoose';
 
 export const dbConnect = () => {
     connect(process.env.MONGO_URI!, {
         useNewUrlParser: true,
-        useUnifiedTopology: true,
-        // useCreateIndex: true,
-        // useFindAndModify: false
+        useUnifiedTopology: true
     } as ConnectOptions).then(
-        () => console.log("Connected to MongoDB"),
-        (error) => console.log("Failed to connect to MongoDB", error)
-    );
+        () => console.log("connect successfully"),
+        (error) => console.log(error)
+    )
 }
-    

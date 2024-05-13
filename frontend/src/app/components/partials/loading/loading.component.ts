@@ -11,12 +11,11 @@ export class LoadingComponent implements OnInit {
   isLoading!: boolean;
   constructor(loadingService: LoadingService) {
     loadingService.isLoading.subscribe((isLoading) => {
-      this.isLoading = isLoading
-    })
+      this.isLoading = isLoading;
+    });
 
-  // loadingService.showLoading();
 
-  }
+   }
 
   ngOnInit(): void {
   }

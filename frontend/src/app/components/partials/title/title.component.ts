@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-title',
@@ -9,13 +9,16 @@ export class TitleComponent implements OnInit {
 
   constructor() { }
 
-  @Input() title!: string;
-  @Input() margin? = '1rem 0 1rem .2rem'
-  @Input() fontSize? ='1.7rem'
-  @Output() testing = new EventEmitter<string>();
+  @Input()
+  title!: string;
+
+  @Input()
+  margin? = '1rem 0 1rem 0.2rem';
+
+  @Input()
+  fontSize? = '1.7rem';
 
   ngOnInit(): void {
-    this.testing.emit('ALVIN CONSULAR');
   }
 
 }

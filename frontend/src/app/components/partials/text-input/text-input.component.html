@@ -1,11 +1,8 @@
 <input-container [label]="label">
-    <!-- HAS a custom directive (appLowercaseInput) that converts all input text to lowercase, problem is it also affects all input fields
-        for all the register field. Commented this for now. TO FOLLOW --->
-    <!-- <input [type]="type" [placeholder]="label" [formControl]="formControl" appLowercaseInput/> -->
-    
-    <input [type]="type" [placeholder]="label" [formControl]="formControl" appLowercaseInput/>
-    <input-validation
-    [control]="control"
-    [showErrorsWhen]="showErrorsWhen">
-    </input-validation>
+<input [type]="type" [placeholder]="label"
+ [formControl]="formControl"/>
+<input-validation
+[control]="control"
+[showErrorsWhen]="showErrorsWhen">
+</input-validation>
 </input-container>

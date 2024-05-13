@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CartService } from 'src/app/services/cart.service';
 import { Cart } from 'src/app/shared/models/Cart';
 import { CartItem } from 'src/app/shared/models/CartItem';
@@ -10,13 +10,11 @@ import { CartItem } from 'src/app/shared/models/CartItem';
 })
 export class CartPageComponent implements OnInit {
   cart!: Cart;
-  name: string = ''
-
-  constructor(private cartService: CartService) { 
+  constructor(private cartService: CartService) {
     this.cartService.getCartObservable().subscribe((cart) => {
       this.cart = cart;
     })
- }
+   }
 
   ngOnInit(): void {
   }
@@ -25,14 +23,9 @@ export class CartPageComponent implements OnInit {
     this.cartService.removeFromCart(cartItem.food.id);
   }
 
-  changeQuantity(cartItem:CartItem, quantityInString: string) {
+  changeQuantity(cartItem:CartItem,quantityInString:string){
     const quantity = parseInt(quantityInString);
-    this.cartService.changeQuantity(cartItem.food.id, quantity)
-  }
-
-  handleTestingEvent(event: string) {
-    this.name = event;
+    this.cartService.changeQuantity(cartItem.food.id, quantity);
   }
 
 }
-

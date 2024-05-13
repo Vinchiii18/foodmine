@@ -8,7 +8,8 @@ import { Order } from 'src/app/shared/models/Order';
 })
 export class OrderItemsListComponent implements OnInit {
 
-  @Input() order!:Order;
+  @Input()
+  order!:Order;
   constructor() { }
 
   ngOnInit(): void {

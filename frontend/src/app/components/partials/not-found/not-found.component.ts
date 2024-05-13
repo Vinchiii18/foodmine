@@ -6,10 +6,14 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./not-found.component.css']
 })
 export class NotFoundComponent implements OnInit {
-  @Input() visible = false;
-  @Input() notFoundMessage = "Nothing Found!";
-  @Input() resetLinkText = "Reset";
-  @Input() resetLinkRounte = "/"
+  @Input()
+  visible = false;
+  @Input()
+  notFoundMessage = "Nothing Found!";
+  @Input()
+  resetLinkText = "Reset";
+  @Input()
+  resetLinkRoute = "/";
   constructor() { }
 
   ngOnInit(): void {

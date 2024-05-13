@@ -7,16 +7,18 @@ import { AbstractControl, FormControl } from '@angular/forms';
   styleUrls: ['./text-input.component.css']
 })
 export class TextInputComponent implements OnInit {
+@Input()
+control!:AbstractControl;
+@Input()
+showErrorsWhen:boolean = true;
+@Input()
+label!: string;
+@Input()
+type: 'text' | 'password' | 'email' = 'text';
 
-  @Input() control!: AbstractControl;
-  @Input() showErrorsWhen: boolean = true;
-  @Input() label!: string;
-  @Input() type: 'text' | 'password'| 'email' = 'text'
-
-  get formControl() {
-    return this.control as FormControl
-  }
-
+get formControl(){
+  return this.control as FormControl;
+}
   constructor() { }
 
   ngOnInit(): void {

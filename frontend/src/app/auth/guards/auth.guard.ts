@@ -7,12 +7,9 @@ import { UserService } from 'src/app/services/user.service';
   providedIn: 'root'
 })
 export class AuthGuard implements CanActivate {
+  constructor(private userService:UserService, private router:Router){
 
-  constructor(
-    private userService: UserService, 
-    private router: Router
-  ) {}
-
+  }
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
@@ -22,5 +19,5 @@ export class AuthGuard implements CanActivate {
     this.router.navigate(['/login'], {queryParams:{returnUrl: state.url}})
     return false;
   }
-  
+
 }

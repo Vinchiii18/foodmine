@@ -1,6 +1,5 @@
-import { Cart } from 'src/app/shared/models/Cart';
-import { CartService } from './../../../services/cart.service';
 import { Component, OnInit } from '@angular/core';
+import { CartService } from 'src/app/services/cart.service';
 import { UserService } from 'src/app/services/user.service';
 import { User } from 'src/app/shared/models/User';
 
@@ -11,41 +10,26 @@ import { User } from 'src/app/shared/models/User';
 })
 export class HeaderComponent implements OnInit {
 
-  // MY WORK, NOT FROM THE COURSE
-  // cart!: Cart
-
-  // constructor(private cartService: CartService) {
-  //   this.cartService.getCartObservable().subscribe((cart) => {
-  //     this.cart = cart;
-  //   })
-  // }
-
-  // ngOnInit(): void {
-  // }
-
-  cartQuantity: number = 0;
-  user!: User;
-
-  constructor(cartService: CartService, private userService: UserService) { 
-    cartService.getCartObservable().subscribe((newCart) => { 
-      this.cartQuantity= newCart.totalCount;
+  cartQuantity=0;
+  user!:User;
+  constructor(cartService:CartService,private userService:UserService) {
+    cartService.getCartObservable().subscribe((newCart) => {
+      this.cartQuantity = newCart.totalCount;
     })
 
     userService.userObservable.subscribe((newUser) => {
       this.user = newUser;
-      // console.log('this.user-->:', this.user)
     })
-  }
+   }
 
   ngOnInit(): void {
-  
   }
 
-  logout() {
+  logout(){
     this.userService.logout();
   }
 
-  get isAuth() {
+  get isAuth(){
     return this.user.token;
   }
 }
