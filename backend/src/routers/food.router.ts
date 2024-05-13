@@ -26,8 +26,10 @@ router.get("/seed", asyncHandler(
 //  });
 
 router.get("/", asyncHandler(async (req, res: any) => {
+    console.log('PASOK SA get /')
     const foods = await FoodModel.find();
     if(!foods) {
+        console.log('FOOD NOT GET FROM DB! KNGINGA MO!');
         res.status(HTTP_BAD_REQUEST).send('FOOD NOT GET FROM DB! KNGINGA MO!');
         return;
     }
