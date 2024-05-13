@@ -9,12 +9,5 @@
     "start": "cd backend/built && node server.js",
     "prebuild": "cd backend && npm run build",
     "build": "cd frontend && npm run build"
-  },
-  "dependencies": {
-    "@types/bcryptjs": "^2.4.6",
-    "bcryptjs": "^2.4.3",
-    "dotenv": "^16.4.5",
-    "express-async-handler": "^1.2.0",
-    "mongoose": "^8.3.4"
   }
 }
