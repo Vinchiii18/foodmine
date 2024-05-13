@@ -23,6 +23,10 @@ export class UserService {
     private toastrService:ToastrService
   ) { }
 
+  public get currentUser():User {
+    return this.userSubject.value;
+  }
+
   login(userLogin: IUserLogin):Observable<User> {
     // Call the API to login
     // If successful, set the userSubject
