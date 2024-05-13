@@ -3,6 +3,7 @@ import { Router } from 'express';
 import { sample_foods, sample_tags } from '../data';
 import asyncHandler from 'express-async-handler';
 import { FoodModel } from '../models/food.model';
+import { HTTP_BAD_REQUEST } from '../constants/http_status';
 
 const router = Router();
 
@@ -26,13 +27,11 @@ router.get("/seed", asyncHandler(
 
 router.get("/", asyncHandler(async (req, res: any) => {
     const foods = await FoodModel.find();
-    if (foods.length > 0) {
-        res.send(foods)
-    } else {
-        console.log('UMAY!!')
-        res.status(404).send({ message: "KINGINA MO LO" });
+    if(!foods) {
+        res.status(HTTP_BAD_REQUEST).send('FOOD NOT GET FROM DB! KNGINGA MO!');
+        return;
     }
-
+    res.send(foods)
     // foods.length > 0 ? res.send(foods) : res.status(404).send({ message: "KINGINA MO LO" });
     
 }));
