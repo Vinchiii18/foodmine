@@ -32,6 +32,7 @@ import { PaymentPageComponent } from './components/pages/payment-page/payment-pa
 import { PaypalButtonComponent } from './components/partials/paypal-button/paypal-button.component';
 import { OrderTrackPageComponent } from './components/pages/order-track-page/order-track-page.component';
 import { LowercaseInputDirective } from './directives/lowercase-input.directive';
+import { StarRatingComponent } from './components/partials/star-rating/star-rating.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { LowercaseInputDirective } from './directives/lowercase-input.directive'
     PaymentPageComponent,
     PaypalButtonComponent,
     OrderTrackPageComponent,
-    LowercaseInputDirective
+    LowercaseInputDirective,
+    StarRatingComponent
   ],
   imports: [
     BrowserModule,
@@ -69,7 +71,7 @@ import { LowercaseInputDirective } from './directives/lowercase-input.directive'
       timeOut: 3000,
       positionClass: 'toast-bottom-right',
       newestOnTop: false
-    })
+    }),
 
   ],
   providers: [
