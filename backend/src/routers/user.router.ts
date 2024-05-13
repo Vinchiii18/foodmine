@@ -61,6 +61,19 @@ router.post('/register', asyncHandler(
   }
 ))
 
+router.put('/update/:id', asyncHandler(async(req, res) => {
+  const { name, email, password, address} = req.body;
+  const id = req.params.id;
+  const user = await UserModel.findByIdAndUpdate(id, {name, email, password, address}, {new: true});
+
+  if(!user){
+    res.status(HTTP_BAD_REQUEST)
+    .send('Update failed, please try again!');
+    return;
+  }
+  res.send(generateTokenReponse(user));
+}))
+
   const generateTokenReponse = (user : User) => {
     const token = jwt.sign({
       id: user.id, email:user.email, isAdmin: user.isAdmin

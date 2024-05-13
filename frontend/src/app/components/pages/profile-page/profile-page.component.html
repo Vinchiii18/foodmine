@@ -1,0 +1,22 @@
+<div class="container">
+    <div routerLink="/" class="back">← Back to Home Page</div>
+    <app-title title="Profile"></app-title>
+    <form [formGroup]="registerForm">
+      <div class="details">
+          <mat-form-field appearance="outline">
+              <mat-label>Name</mat-label>
+              <input formControlName="name" matInput placeholder="Name">
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+              <mat-label>Email</mat-label>
+              <input formControlName="email" matInput placeholder="Email">
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+              <mat-label>Address</mat-label>
+              <input formControlName="address" matInput placeholder="Address">
+          </mat-form-field>
+      </div>
+      <default-button text="Update Details" (click)="update()"></default-button>
+    </form>
+</div>
+  

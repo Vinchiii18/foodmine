@@ -30,6 +30,10 @@ import { PaymentPageComponent } from './components/pages/payment-page/payment-pa
 import { PaypalButtonComponent } from './components/partials/paypal-button/paypal-button.component';
 import { OrderTrackPageComponent } from './components/pages/order-track-page/order-track-page.component';
 import { StarRatingComponent } from './components/partials/star-rating/star-rating.component';
+import { ProfilePageComponent } from './components/pages/profile-page/profile-page.component';
+
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,7 +58,8 @@ import { StarRatingComponent } from './components/partials/star-rating/star-rati
     PaymentPageComponent,
     PaypalButtonComponent,
     OrderTrackPageComponent,
-    StarRatingComponent
+    StarRatingComponent,
+    ProfilePageComponent
   ],
   imports: [
     BrowserModule,
@@ -66,7 +71,9 @@ import { StarRatingComponent } from './components/partials/star-rating/star-rati
       timeOut:3000,
       positionClass:'toast-bottom-right',
       newestOnTop:false
-    })
+    }),
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [
     {provide:HTTP_INTERCEPTORS, useClass:AuthInterceptor, multi: true },

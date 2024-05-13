@@ -1,0 +1,29 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.back {
+    color: #af1313;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 1rem;
+    margin-top: 3.6rem;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.back:hover {
+    cursor: pointer;
+    background: #e72929;
+    color: white;
+}

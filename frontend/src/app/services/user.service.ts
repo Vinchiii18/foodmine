@@ -2,10 +2,11 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { BehaviorSubject, Observable, tap } from 'rxjs';
-import { USER_LOGIN_URL, USER_REGISTER_URL } from '../shared/constants/urls';
+import { USER_LOGIN_URL, USER_REGISTER_URL, USER_UPDATE_URL } from '../shared/constants/urls';
 import { IUserLogin } from '../shared/interfaces/IUserLogin';
 import { IUserRegister } from '../shared/interfaces/IUserRegister';
 import { User } from '../shared/models/User';
+import { IUserUpdate } from '../shared/interfaces/IUserUpdate';
 
 const USER_KEY = 'User';
 @Injectable({
@@ -59,6 +60,30 @@ export class UserService {
       })
     )
   }
+
+  update(userRegiser:IUserUpdate, id: any): Observable<User>{
+    console.log('userRegiser-->', userRegiser);
+    console.log('id-->', id);
+    return this.http.put<User>(USER_UPDATE_URL + id, userRegiser).pipe(
+      tap({
+        next: (user) => {
+          this.setUserToLocalStorage(user);
+          this.userSubject.next(user);
+          this.toastrService.success(
+            `Your profile has been updated ${user.name}!`,
+            'Update Successful!'
+          )
+        },
+        error: (errorResponse) => {
+          this.toastrService.error(errorResponse.error,
+            'Update Failed!')
+        }
+      })
+    )
+  }
+
+
+
 
 
   logout(){
