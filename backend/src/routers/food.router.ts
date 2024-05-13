@@ -26,7 +26,15 @@ router.get("/seed", asyncHandler(
 
 router.get("/", asyncHandler(async (req, res: any) => {
     const foods = await FoodModel.find();
-    res.send(foods)
+    if (foods.length > 0) {
+        res.send(foods)
+    } else {
+        console.log('UMAY!!')
+        res.status(404).send({ message: "KINGINA MO LO" });
+    }
+
+    // foods.length > 0 ? res.send(foods) : res.status(404).send({ message: "KINGINA MO LO" });
+    
 }));
 
 router.get("/search/:searchTerm", asyncHandler(
