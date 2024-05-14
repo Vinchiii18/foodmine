@@ -7,9 +7,9 @@
         <li *ngIf="!isAuth">
           <a routerLink="/login">Login</a>
         </li>
-        <li *ngIf="isAuth" class="menu-container" [ngClass]="{'menu-open': isMenuOpen}" (mouseleave)="isMenuOpen = false">
+        <li *ngIf="isAuth" class="menu-container" (click)="toggleMenu()" (mouseleave)="hideMenu()">
           <a>{{user.name}}</a>
-          <div class="menu">
+          <div class="menu" [ngClass]="{ 'show-menu': isMenuVisible }">
             <a routerLink="/profile">Profile</a>
             <a *ngIf="order.id" routerLink="/track/{{order.id}}">Orders</a>
             <a (click)="logout()">Logout</a>

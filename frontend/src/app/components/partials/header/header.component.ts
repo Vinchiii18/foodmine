@@ -11,11 +11,10 @@ import { User } from 'src/app/shared/models/User';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
-  isMenuOpen = false;
   cartQuantity=0;
   user!: User;
   order:Order = new Order();
+  isMenuVisible = false;  
 
   constructor(cartService:CartService,private userService:UserService, orderService: OrderService) {
 
@@ -48,8 +47,12 @@ export class HeaderComponent implements OnInit {
     return this.user.token;
   }
 
-  openMenu() {
-    this.isMenuOpen = true;
+  toggleMenu() {
+    this.isMenuVisible = !this.isMenuVisible;
   }
 
+  hideMenu() {
+    this.isMenuVisible = false;
+  }
+  
 }
