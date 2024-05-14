@@ -7,11 +7,11 @@
         <li *ngIf="!isAuth">
           <a routerLink="/login">Login</a>
         </li>
-        <li *ngIf="isAuth" class="menu-container">
+        <li *ngIf="isAuth" class="menu-container" [ngClass]="{'menu-open': isMenuOpen}" (mouseleave)="isMenuOpen = false">
           <a>{{user.name}}</a>
           <div class="menu">
             <a routerLink="/profile">Profile</a>
-            <a routerLink="/checkout">Orders</a>
+            <a *ngIf="order.id" routerLink="/track/{{order.id}}">Orders</a>
             <a (click)="logout()">Logout</a>
           </div>
         </li>

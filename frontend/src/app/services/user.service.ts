@@ -62,8 +62,6 @@ export class UserService {
   }
 
   update(userRegiser:IUserUpdate, id: any): Observable<User>{
-    console.log('userRegiser-->', userRegiser);
-    console.log('id-->', id);
     return this.http.put<User>(USER_UPDATE_URL + id, userRegiser).pipe(
       tap({
         next: (user) => {

@@ -64,7 +64,7 @@ export class PaypalButtonComponent implements OnInit {
 
       onError: (err: any) => {
         this.toastrService.error('Payment Failed', 'Error');
-        console.log(err);
+        // console.log(err);
       },
     })
     .render(this.paypalElement.nativeElement);

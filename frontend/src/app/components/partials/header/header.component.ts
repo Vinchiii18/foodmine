@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from 'src/app/services/cart.service';
+import { OrderService } from 'src/app/services/order.service';
 import { UserService } from 'src/app/services/user.service';
+import { Order } from 'src/app/shared/models/Order';
 import { User } from 'src/app/shared/models/User';
 
 @Component({
@@ -10,16 +12,29 @@ import { User } from 'src/app/shared/models/User';
 })
 export class HeaderComponent implements OnInit {
 
+  isMenuOpen = false;
   cartQuantity=0;
-  user!:User;
-  constructor(cartService:CartService,private userService:UserService) {
+  user!: User;
+  order:Order = new Order();
+
+  constructor(cartService:CartService,private userService:UserService, orderService: OrderService) {
+
     cartService.getCartObservable().subscribe((newCart) => {
       this.cartQuantity = newCart.totalCount;
     })
 
     userService.userObservable.subscribe((newUser) => {
       this.user = newUser;
+      orderService.getOrderByUser(this.user.id).subscribe( {
+        next: (order) => {  
+          this.order = order;
+        }, 
+        error: (err) => {
+          return;
+        }
+      })
     })
+
    }
 
   ngOnInit(): void {
@@ -32,4 +47,9 @@ export class HeaderComponent implements OnInit {
   get isAuth(){
     return this.user.token;
   }
+
+  openMenu() {
+    this.isMenuOpen = true;
+  }
+
 }

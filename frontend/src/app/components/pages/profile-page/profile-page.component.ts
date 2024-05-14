@@ -23,8 +23,6 @@ export class ProfilePageComponent implements OnInit{
   ){
     this.user = userService.currentUser;
 
-    console.log('this.user-->', this.user);
-
     this.registerForm = fb.group({
       name: [this.user.name, [Validators.required]],
       email: [this.user.email, [Validators.required,Validators.email]],
@@ -37,8 +35,6 @@ export class ProfilePageComponent implements OnInit{
   }
 
   update(){
-    console.log('this.registerForm-->', this.registerForm.value);
-    console.log('this.USER-->', this.user.id);
     this.userService.update(this.registerForm.value, this.user.id).subscribe(_ => {
       this.router.navigateByUrl(this.returnUrl);
     })

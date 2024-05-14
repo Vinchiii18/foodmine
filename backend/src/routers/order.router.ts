@@ -55,6 +55,15 @@ router.get('/track/:id', asyncHandler( async (req, res) => {
     res.send(order);
 }))
 
+router.get('/getorder', asyncHandler( async (req, res) => {
+    const order= await getNewOrderForCurrentUser(req);
+    if(order) res.send(order);
+    else res.status(HTTP_BAD_REQUEST).send();
+
+    // const {user} = req.body;
+    // const user = await UserModel.findOne({email});
+}))
+
 export default router;
 
 async function getNewOrderForCurrentUser(req: any) {
