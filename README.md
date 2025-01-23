@@ -1,6 +1,12 @@
 Currently Deployed:
 https://foodmine-odbd.onrender.com/
 
+Please note that the MongoDB Cluster might go down after prolonged inactivity. Since I don’t monitor it regularly, I appreciate your understanding if this happens.
+
+Ypu may use this login credentials for testing below:
+test@gmail.com
+test123
+
 This was fixed on this commit, still trying to understand why this works as all files are somewhat identical:
 https://github.com/Vinchiii18/foodmine/commit/c2eadd3bdd77a06a0994a92028277476365634b2?diff=split&w=1#diff-23d96888636f4d0c2b14f5f5144fc1d54703d6fb846c3c4a04328f123b1e3a70
 
